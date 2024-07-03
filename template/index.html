@@ -7,6 +7,9 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/report-template/main.tsx"></script>
+    <script>
+      window.__ARTILLERY_REPORT__ = {}
+    </script>
+    <script type="module" src="/template/main.tsx"></script>
   </body>
 </html>

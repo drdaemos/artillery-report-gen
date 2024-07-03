@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -9,12 +7,15 @@
     "skipLibCheck": true,
 
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
     "jsx": "react-jsx",
+
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "rootDir": "template",
+    "outDir": "dist/template",
 
     "strict": true,
     "noUnusedLocals": true,
@@ -22,5 +23,10 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/report-template"]
+  "include": [
+    "template/**/*"
+  ],
+  "exclude": [
+    "template/**/*.spec.ts"
+  ]
 }

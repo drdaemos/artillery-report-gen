@@ -1,0 +1,32 @@
+{
+  "name": "artillery-report-gen",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "artillery-report-gen": "./dist/artillery-report-gen.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "biome check . && tsc --project tsconfig.app.json --noEmit",
+    "lint:fix": "biome check . --write"
+  },
+  "dependencies": {
+    "@tremor/react": "^3.17",
+    "commander": "^12.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vite-plugin-singlefile": "^2.0.2"
+  }
+}

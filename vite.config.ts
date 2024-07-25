@@ -10,8 +10,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        // @ts-ignore
         main: resolve(import.meta.dirname, 'template/index.html'),
       },
     },
+  },
+  server: {
+    open: '/template/index.html',
   },
 })

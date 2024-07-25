@@ -1,31 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import testReport from '../test/report.json'
+import { Scenario } from './components/Scenario.tsx'
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {
+  const report =
+    // @ts-ignore
+    'aggregate' in window.__ARTILLERY_REPORT__ ? window.__ARTILLERY_REPORT__ : testReport
 
   return (
-    <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app container mx-auto mb-16 p-4 lg:p-6">
+      <Scenario report={report} scenario={'Translate Async'} />
+    </div>
   )
 }
-
-export default App

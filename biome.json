@@ -30,6 +30,9 @@
     "include": [
       "./test/**/*.ts",
       "./src/**/*.ts",
+      "./template/**/*.ts",
+      "./template/**/*.tsx",
+      "./template/**/*.css",
       "./scripts/**/*.ts",
       "./biome.json",
       "./package.json"
@@ -45,7 +48,10 @@
   "linter": {
     "rules": {
       "nursery": {
-        "useImportExtensions": "error"
+        "useImportExtensions": {
+          "level": "error",
+          "fix": "safe"
+        }
       },
       "performance": {
         "noAccumulatingSpread": "error",
